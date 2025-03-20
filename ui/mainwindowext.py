@@ -106,7 +106,7 @@ class RegisterWindow(QMainWindow, Ui_Register):
     def Return_Login(self):
         self.close()
         self.login_window.show()
-
+        self.login_window.lineEdit_username.setFocus()
     def set_background(self):
         """ Thiết lập hình nền bằng QLabel """
         image_path = os.path.join(os.path.dirname(__file__), "assets/image/imgailatrieuphu1.jpg")
@@ -164,7 +164,18 @@ class Login(QMainWindow, Ui_Login):
         self.set_background()
         self.pushButton_register.clicked.connect(self.show_register)
         self.pushButton_forgot_password.clicked.connect(self.forgot_password)
+        self.lineEdit_username.setFocus()
+        self.lineEdit_password.returnPressed.connect(self.login_user)
+        # Thiết lập thứ tự Tab
+        self.setTabOrder(self.lineEdit_username, self.lineEdit_password)
+        self.setTabOrder(self.lineEdit_password, self.pushButton_login)
+        self.setTabOrder(self.pushButton_login, self.pushButton_register)
+        self.setTabOrder(self.pushButton_register, self.pushButton_forgot_password)
 
+    def show(self):
+        super().show()
+            # Đặt lại con trỏ vào lineEdit_username mỗi khi cửa sổ hiển thị
+        self.lineEdit_username.setFocus()
 
                                 # try:
                                 #     self.client = MongoClient("mongodb://localhost:27017/", serverSelectionTimeoutMS=3000)
@@ -191,7 +202,10 @@ class Login(QMainWindow, Ui_Login):
 
         if bcrypt.checkpw(password.encode('utf-8'), user["password"].encode('utf-8')):
             QMessageBox.information(self, "Thành công", "Đăng nhập thành công!")
-            self.open_main_window()
+            self.close()
+            self.main_window.show()
+            # Tự động mở màn hình chơi game sau khi đăng nhập thành công
+            self.main_window.showGameplay()
         else:
             QMessageBox.warning(self, "Lỗi", "Sai mật khẩu! Vui lòng thử lại.")
 
@@ -523,17 +537,10 @@ class GamePlayWindow(QMainWindow, Ui_GamePlay):
     def kiem_tra_dap_an(self, answer_index):
         question_data = self.cau_hoi[self.current_question]
         buttons = [self.dap_an_1_button, self.dap_an_2_button, self.dap_an_3_button, self.dap_an_4_button]
-        print(f"Selected: {answer_index}, Correct: {question_data['correct']}")
         if answer_index == question_data["correct"]:
-            print("Correct answer!")
             self.correct_answers += 1
             self.reward = self.rewards[self.correct_answers - 1] if self.correct_answers <= len(self.rewards) else \
-                self.rewards[-1]
-            try:
-                self.correct_sound.play()
-            except Exception as e:
-                print(f"Error playing correct sound: {str(e)}")
-            # Áp dụng stylesheet đầy đủ
+            self.rewards[-1]
             buttons[answer_index].setStyleSheet("""
                 background-color: green;
                 color: white;
@@ -542,26 +549,13 @@ class GamePlayWindow(QMainWindow, Ui_GamePlay):
                 border: 2px solid #2980b9;
                 padding: 10px 20px;
             """)
-            buttons[answer_index].update()  # Buộc cập nhật giao diện
-            self.reward_label.setText(f"Tiền thưởng hiện tại: {self.reward:,} VND")
-            self.next_button.setVisible(True)
-            QTimer.singleShot(100, lambda: [btn.setEnabled(False) for btn in buttons])
+            if self.correct_answers >= 15:
+                self.hien_thong_bao()  # Gọi thông báo thắng
+            else:
+                self.next_button.setVisible(True)
+                QTimer.singleShot(100, lambda: [btn.setEnabled(False) for btn in buttons])
         else:
-            print("Wrong answer!")
-            buttons[answer_index].setStyleSheet("""
-                background-color: red;
-                color: white;
-                font-size: 15px;
-                border-radius: 15px;
-                border: 2px solid #2980b9;
-                padding: 10px 20px;
-            """)
-            buttons[answer_index].update()
-            try:
-                self.wrong_sound.play()
-            except Exception as e:
-                print(f"Error playing wrong sound: {str(e)}")
-            self.hien_thong_bao_sai()
+            self.hien_thong_bao_sai()  # Gọi thông báo thua
 
     def tiep_tuc_cau_hoi(self):
         self.current_question += 1
@@ -572,18 +566,37 @@ class GamePlayWindow(QMainWindow, Ui_GamePlay):
             btn.setEnabled(True)
 
     def hien_thong_bao(self):
-        msg = QMessageBox()
-        msg.setText(
-            f"Chúc mừng! Bạn đã trả lời đúng {self.correct_answers}/{len(self.cau_hoi)} câu. Phần thưởng: {self.reward:,} VND")
-        msg.exec()
-        self.reset_game()
+        """Xử lý khi trả lời đúng"""
+        if self.correct_answers >= 15:  # Nếu trả lời đúng 15 câu
+            QMessageBox.information(self, "Chúc mừng!",
+                                    f"Bạn đã trả lời đúng 15 câu!\nPhần thưởng: {self.reward:,} VND")
+            self.Return_MainWindow()  # Quay về màn hình chính
+            self.reset_game()  # Reset lại game cho lượt chơi mới
+        else:
+            self.tiep_tuc_cau_hoi()  # Chuyển sang câu tiếp theo mà không hiện thông báo
 
     def hien_thong_bao_sai(self):
-        msg = QMessageBox()
-        msg.setText(
-            f"Đáp án sai! Bạn đã trả lời đúng {self.correct_answers}/{len(self.cau_hoi)} câu. Phần thưởng: {self.reward:,} VND")
+        """Hiển thị thông báo khi trả lời sai và quay về màn hình chính"""
+        buttons = [self.dap_an_1_button, self.dap_an_2_button, self.dap_an_3_button, self.dap_an_4_button]
+        correct_index = self.cau_hoi[self.current_question]["correct"]
+        # Làm nổi bật đáp án đúng
+        buttons[correct_index].setStyleSheet("""
+            background-color: green;
+            color: white;
+            font-size: 15px;
+            border-radius: 15px;
+            border: 2px solid #2980b9;
+            padding: 10px 20px;
+        """)
+        msg = QMessageBox(self)
+        msg.setWindowTitle("Rất tiếc!")
+        msg.setText("Bạn đã trả lời sai!")
+        msg.setInformativeText(
+            f"Trong lượt chơi này bạn đã trả lời đúng {self.correct_answers} câu.\nPhần thưởng: {self.reward:,} VND")
+        msg.setIcon(QMessageBox.Icon.Warning)
         msg.exec()
-        self.reset_game()
+        self.Return_MainWindow()  # Quay về màn hình chính
+        self.reset_game()  # Reset lại game cho lượt chơi mới
 
     def reset_game(self):
         self.current_question = 0
@@ -753,7 +766,8 @@ class MW_Extend(QMainWindow, Ui_MainWindow):
         self.push_button_cai_dat.clicked.connect(self.showSettings)
         self.push_button_thoat.clicked.connect(self.confirm_exit)
         self.push_button_lich_su_choi.clicked.connect(self.show_history)
-        
+        # Khởi tạo ngôn ngữ mặc định
+        self.pending_language = "vi"  # Ngôn ngữ mặc định là tiếng Việt
 
         # Khởi tạo pygame.mixer để phát nhạc
         pygame.mixer.init()
@@ -851,8 +865,15 @@ class MW_Extend(QMainWindow, Ui_MainWindow):
         event.ignore()  # Ngăn Qt đóng cửa sổ nếu người dùng nhấn "No"
 
     def showGameplay(self):
+        username = self.login_window.lineEdit_username.text().strip()
+        if not username:
+            QMessageBox.warning(self, "Lỗi", "Vui lòng đăng nhập trước khi chơi!")
+            return
         if not hasattr(self, 'gameplay_window') or self.gameplay_window is None:
-            self.gameplay_window = GamePlayWindow(self, self.db_manager, self.login_window.lineEdit_username.text())
+            self.gameplay_window = GamePlayWindow(self, self.db_manager, username)
+            self.gameplay_window.language = self.pending_language  # Gán ngôn ngữ đã chọn
+            self.gameplay_window.load_questions()  # Tải câu hỏi với ngôn ngữ hiện tại
+            self.gameplay_window.hien_cau_hoi()  # Hiển thị câu hỏi
         self.hide()
         self.gameplay_window.show()
 
@@ -956,10 +977,17 @@ class SettingsWindow(QtWidgets.QWidget):
 
     def change_language(self, lang):
         lang_map = {"Tiếng Việt": "vi", "English": "en"}
+        selected_language = lang_map[lang]
+
+        # Kiểm tra nếu GameplayWindow đã được khởi tạo
         if hasattr(self.main_window, 'gameplay_window') and self.main_window.gameplay_window:
-            self.main_window.gameplay_window.language = lang_map[lang]
-            self.main_window.gameplay_window.load_questions()
-            self.main_window.gameplay_window.hien_cau_hoi()
+            self.main_window.gameplay_window.language = selected_language
+            self.main_window.gameplay_window.load_questions()  # Tải lại câu hỏi với ngôn ngữ mới
+            self.main_window.gameplay_window.hien_cau_hoi()  # Hiển thị câu hỏi đầu tiên
+        else:
+            # Nếu chưa có gameplay_window, lưu ngôn ngữ để sử dụng khi khởi tạo sau
+            if not hasattr(self.main_window, 'pending_language'):
+                self.main_window.pending_language = selected_language
 
     def get_system_volume(self):
         if not sys.platform.startswith('win'):
@@ -1029,9 +1057,6 @@ class QuestionManagerWindow(QtWidgets.QWidget):
         self.main_window = main_window
         self.db_manager = db_manager
         self.questions_collection = self.db_manager.get_questions_collection()
-        self.client = MongoClient("mongodb://localhost:27017/")
-        self.db = self.client["login_data"]
-        self.questions_collection = self.db["questions_bank"]
         layout = QtWidgets.QVBoxLayout()
 
         # Nhập câu hỏi
@@ -1060,6 +1085,11 @@ class QuestionManagerWindow(QtWidgets.QWidget):
         self.add_button.clicked.connect(self.add_question)
         layout.addWidget(self.add_button)
 
+        # Nút nhập từ file JSON
+        self.import_button = QtWidgets.QPushButton("Nhập từ file JSON")
+        self.import_button.clicked.connect(self.import_from_json)
+        layout.addWidget(self.import_button)
+
         self.setLayout(layout)
 
     def add_question(self):
@@ -1082,3 +1112,14 @@ class QuestionManagerWindow(QtWidgets.QWidget):
         self.question_input.clear()
         for input in self.answer_inputs:
             input.clear()
+
+    def import_from_json(self):
+        file_path, _ = QtWidgets.QFileDialog.getOpenFileName(self, "Chọn file JSON", "", "JSON Files (*.json)")
+        if file_path:
+            try:
+                with open(file_path, "r", encoding="utf-8") as file:
+                    questions = json.load(file)
+                self.questions_collection.insert_many(questions)
+                QMessageBox.information(self, "Thành công", f"Đã thêm {len(questions)} câu hỏi từ file!")
+            except Exception as e:
+                QMessageBox.critical(self, "Lỗi", f"Lỗi khi nhập file: {str(e)}")
