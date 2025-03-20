@@ -415,7 +415,7 @@ class Ui_GamePlay(object):
 "")
         self.back_button.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\Users\\admin\\Documents\\GitHub\\ai-la-trieu-phu\\ui\\../../../../back_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("D:/download/back_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.back_button.setIcon(icon)
         self.back_button.setIconSize(QtCore.QSize(70, 30))
         self.back_button.setObjectName("back_button")
