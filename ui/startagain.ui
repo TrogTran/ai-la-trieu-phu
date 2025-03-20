@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>thongbao</class>
+ <widget class="QMainWindow" name="thongbao">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>690</width>
+    <height>365</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>60</y>
+      <width>591</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                      stop:0 #003366, stop:1 #3366CC);
+    color: white;
+    font: bold 18px &quot;Arial&quot;;
+    padding: 5px;
+    border: 2px solid #FFD700;
+    border-radius: 10px;
+    qproperty-alignment: 'AlignCenter';
+}
+</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#ffff00;&quot;&gt;Bạn có muốn bắt đầu lại trò chơi không?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>190</y>
+      <width>591</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="lich_su_choi_button">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                      stop:0 #003366, stop:1 #3366CC);
+    color: white;
+    font: bold 16px &quot;Arial&quot;;
+    border: 2px solid #FFD700;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                      stop:0 #0055AA, stop:1 #3399FF);
+}
+
+QPushButton:pressed {
+    background-color: #002244;
+    border: 2px solid #FF8C00;
+}
+
+QPushButton:disabled {
+    background-color: #666666;
+    border: 2px solid #999999;
+    color: #CCCCCC;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Xem lịch sử chơi</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="bat_dau_lai_button">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                      stop:0 #003366, stop:1 #3366CC);
+    color: white;
+    font: bold 16px &quot;Arial&quot;;
+    border: 2px solid #FFD700;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                      stop:0 #0055AA, stop:1 #3399FF);
+}
+
+QPushButton:pressed {
+    background-color: #002244;
+    border: 2px solid #FF8C00;
+}
+
+QPushButton:disabled {
+    background-color: #666666;
+    border: 2px solid #999999;
+    color: #CCCCCC;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Bắt đầu lại</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="man_hinh_chinh_button">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                      stop:0 #003366, stop:1 #3366CC);
+    color: white;
+    font: bold 16px &quot;Arial&quot;;
+    border: 2px solid #FFD700;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                      stop:0 #0055AA, stop:1 #3399FF);
+}
+
+QPushButton:pressed {
+    background-color: #002244;
+    border: 2px solid #FF8C00;
+}
+
+QPushButton:disabled {
+    background-color: #666666;
+    border: 2px solid #999999;
+    color: #CCCCCC;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Quay về màn hình chính</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>690</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
