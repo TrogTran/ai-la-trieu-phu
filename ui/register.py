@@ -165,7 +165,7 @@ class Ui_Register(object):
 "")
         self.pushButton_back.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\Users\\admin\\Documents\\GitHub\\ai-la-trieu-phu\\ui\\../../../../back_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("C:\\Users\\admin\\Documents\\GitHub\\ai-la-trieu-phu\\ui\\assets/image/back_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_back.setIcon(icon)
         self.pushButton_back.setIconSize(QtCore.QSize(70, 30))
         self.pushButton_back.setObjectName("pushButton_back")
