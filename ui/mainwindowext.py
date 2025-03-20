@@ -969,3 +969,7 @@ class QuestionManagerWindow(QtWidgets.QWidget):
         self.question_input.clear()
         for input in self.answer_inputs:
             input.clear()
+
+
+            hgfjhygfyhrtsxhkiy
+
