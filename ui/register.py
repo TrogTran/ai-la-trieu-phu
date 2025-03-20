@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'C:\laptrinhc\project_millionair\ui\register.ui'
+# Form implementation generated from reading ui file 'C:\Users\admin\Documents\GitHub\ai-la-trieu-phu\ui\register.ui'
 #
 # Created by: PyQt6 UI code generator 6.8.1
 #
@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Register(object):
     def setupUi(self, Register):
         Register.setObjectName("Register")
-        Register.resize(817, 657)
+        Register.resize(802, 667)
         Register.setStyleSheet("\n"
 "background-repeat: no-repeat;  /* Không lặp lại ảnh */\n"
 "background-position: center;  /* Đưa ảnh về trung tâm */\n"
@@ -20,8 +20,88 @@ class Ui_Register(object):
 "")
         self.centralwidget = QtWidgets.QWidget(parent=Register)
         self.centralwidget.setObjectName("centralwidget")
-        self.lineEdit_register_password = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.lineEdit_register_password.setGeometry(QtCore.QRect(340, 340, 211, 41))
+        self.gridLayout_7 = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout_7.setObjectName("gridLayout_7")
+        self.widget_5 = QtWidgets.QWidget(parent=self.centralwidget)
+        self.widget_5.setObjectName("widget_5")
+        self.gridLayout_5 = QtWidgets.QGridLayout(self.widget_5)
+        self.gridLayout_5.setObjectName("gridLayout_5")
+        self.widget_6 = QtWidgets.QWidget(parent=self.widget_5)
+        self.widget_6.setObjectName("widget_6")
+        self.gridLayout_6 = QtWidgets.QGridLayout(self.widget_6)
+        self.gridLayout_6.setObjectName("gridLayout_6")
+        self.widget_3 = QtWidgets.QWidget(parent=self.widget_6)
+        self.widget_3.setObjectName("widget_3")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.widget_3)
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.label_5 = QtWidgets.QLabel(parent=self.widget_3)
+        self.label_5.setStyleSheet("/* QLabel - Tiêu đề chính */\n"
+"QLabel {\n"
+"    font-size: 25px;  /* Tăng kích thước chữ */\n"
+"    font-weight: bold;\n"
+"    color: #FFD700;  /* Màu vàng kim */\n"
+"    text-align: center;  /* Căn giữa chữ */\n"
+"    qproperty-alignment: \'AlignCenter\';  /* Đảm bảo căn giữa trong Qt */\n"
+"    background: transparent;\n"
+"    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);  /* Hiệu ứng đổ bóng nổi bật */\n"
+"    border: 3px solid #FFD700;  /* Viền vàng giống khung câu hỏi trong game */\n"
+"    border-radius: 15px;  /* Bo góc mềm mại */\n"
+"    padding: 10px;\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                                stop:0 #003366, stop:1 #000F40); /* Gradient xanh đậm */\n"
+"}\n"
+"")
+        self.label_5.setObjectName("label_5")
+        self.gridLayout_3.addWidget(self.label_5, 0, 0, 1, 1)
+        self.lineEdit_register_username = QtWidgets.QLineEdit(parent=self.widget_3)
+        self.lineEdit_register_username.setStyleSheet("/* QLineEdit - Ô nhập liệu */\n"
+"QLineEdit {\n"
+"    font-size: 18px;  /* Kích thước chữ */\n"
+"    font-weight: bold;\n"
+"    color: white;  /* Màu chữ trắng */\n"
+"    padding: 8px;\n"
+"    border: 3px solid #FFD700;  /* Viền vàng kim */\n"
+"    border-radius: 10px;  /* Bo góc mềm mại */\n"
+"    background: rgba(0, 0, 50, 0.8);  /* Màu xanh đậm trong suốt */\n"
+"    text-align: center;  /* Căn giữa chữ */\n"
+"    selection-background-color: #FFD700;  /* Màu nền khi chọn text */\n"
+"}\n"
+"\n"
+"/* Khi nhập vào ô, viền sáng lên */\n"
+"QLineEdit:focus {\n"
+"    border: 3px solid #00CFFF;  /* Viền phát sáng màu xanh neon */\n"
+"    background: rgba(0, 0, 80, 0.9);\n"
+"}\n"
+"")
+        self.lineEdit_register_username.setObjectName("lineEdit_register_username")
+        self.gridLayout_3.addWidget(self.lineEdit_register_username, 0, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.widget_3, 2, 0, 1, 3)
+        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.gridLayout_6.addItem(spacerItem, 3, 0, 1, 1)
+        self.widget_4 = QtWidgets.QWidget(parent=self.widget_6)
+        self.widget_4.setObjectName("widget_4")
+        self.gridLayout_4 = QtWidgets.QGridLayout(self.widget_4)
+        self.gridLayout_4.setObjectName("gridLayout_4")
+        self.label_2 = QtWidgets.QLabel(parent=self.widget_4)
+        self.label_2.setStyleSheet("/* QLabel - Tiêu đề chính */\n"
+"QLabel {\n"
+"    font-size: 25px;  /* Tăng kích thước chữ */\n"
+"    font-weight: bold;\n"
+"    color: #FFD700;  /* Màu vàng kim */\n"
+"    text-align: center;  /* Căn giữa chữ */\n"
+"    qproperty-alignment: \'AlignCenter\';  /* Đảm bảo căn giữa trong Qt */\n"
+"    background: transparent;\n"
+"    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);  /* Hiệu ứng đổ bóng nổi bật */\n"
+"    border: 3px solid #FFD700;  /* Viền vàng giống khung câu hỏi trong game */\n"
+"    border-radius: 15px;  /* Bo góc mềm mại */\n"
+"    padding: 10px;\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                                stop:0 #003366, stop:1 #000F40); /* Gradient xanh đậm */\n"
+"}\n"
+"")
+        self.label_2.setObjectName("label_2")
+        self.gridLayout_4.addWidget(self.label_2, 0, 0, 1, 1)
+        self.lineEdit_register_password = QtWidgets.QLineEdit(parent=self.widget_4)
         self.lineEdit_register_password.setStyleSheet("/* QLineEdit - Ô nhập liệu */\n"
 "QLineEdit {\n"
 "    font-size: 18px;  /* Kích thước chữ */\n"
@@ -43,8 +123,56 @@ class Ui_Register(object):
 "")
         self.lineEdit_register_password.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.lineEdit_register_password.setObjectName("lineEdit_register_password")
-        self.pushButton_register = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton_register.setGeometry(QtCore.QRect(380, 460, 131, 51))
+        self.gridLayout_4.addWidget(self.lineEdit_register_password, 0, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.widget_4, 4, 0, 1, 3)
+        self.pushButton_back = QtWidgets.QPushButton(parent=self.widget_6)
+        self.pushButton_back.setStyleSheet("QPushButton {\n"
+"    font-size: 18px;\n"
+"    font-weight: bold;\n"
+"    color: #FFD700; /* Màu vàng */\n"
+"    background-color: #FFFFFF; /* Màu trắng */\n"
+"    border: 3px solid #FFD700; /* Viền vàng */\n"
+"    border-radius: 25px; /* Bo tròn */\n"
+"    padding: 10px 20px;\n"
+"    min-width: 120px;\n"
+"    text-transform: uppercase;\n"
+"    letter-spacing: 1px;\n"
+"    outline: none;\n"
+"    transition: all 0.3s ease-in-out;\n"
+"}\n"
+"\n"
+"/* Hiệu ứng hover - Nền chuyển sang vàng nhạt pha trắng */\n"
+"QPushButton:hover {\n"
+"    background-color: #FFF8DC; /* Vàng nhạt lai với trắng */\n"
+"    border: 3px solid #FFEE58; /* Viền vàng sáng hơn */\n"
+"    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.6);\n"
+"}\n"
+"\n"
+"/* Hiệu ứng khi nhấn */\n"
+"QPushButton:pressed {\n"
+"    background-color: #F5DEB3; /* Màu be vàng nhẹ hơn */\n"
+"    border: 3px solid #FFCC00; /* Viền vàng đậm */\n"
+"    box-shadow: 0px 0px 5px rgba(255, 215, 0, 0.5);\n"
+"    transform: scale(0.95);\n"
+"}\n"
+"\n"
+"/* Nút bị vô hiệu hóa */\n"
+"QPushButton:disabled {\n"
+"    background-color: #555555; /* Xám */\n"
+"    border: 3px solid #777777;\n"
+"    color: #999999;\n"
+"}\n"
+"")
+        self.pushButton_back.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("C:\\Users\\admin\\Documents\\GitHub\\ai-la-trieu-phu\\ui\\../../../../back_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButton_back.setIcon(icon)
+        self.pushButton_back.setIconSize(QtCore.QSize(70, 30))
+        self.pushButton_back.setObjectName("pushButton_back")
+        self.gridLayout_6.addWidget(self.pushButton_back, 0, 0, 1, 1)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_6.addItem(spacerItem1, 6, 0, 1, 1)
+        self.pushButton_register = QtWidgets.QPushButton(parent=self.widget_6)
         self.pushButton_register.setStyleSheet("/* QLabel - Tiêu đề User Name, Password */\n"
 "QLabel {\n"
 "    font-size: 18px;\n"
@@ -99,49 +227,16 @@ class Ui_Register(object):
 "\n"
 "")
         self.pushButton_register.setObjectName("pushButton_register")
-        self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(110, 330, 201, 51))
-        self.label_2.setStyleSheet("/* QLabel - Tiêu đề chính */\n"
-"QLabel {\n"
-"    font-size: 32px;  /* Tăng kích thước chữ */\n"
-"    font-weight: bold;\n"
-"    color: #FFD700;  /* Màu vàng kim */\n"
-"    text-align: center;  /* Căn giữa chữ */\n"
-"    qproperty-alignment: \'AlignCenter\';  /* Đảm bảo căn giữa trong Qt */\n"
-"    background: transparent;\n"
-"    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);  /* Hiệu ứng đổ bóng nổi bật */\n"
-"    border: 3px solid #FFD700;  /* Viền vàng giống khung câu hỏi trong game */\n"
-"    border-radius: 15px;  /* Bo góc mềm mại */\n"
-"    padding: 10px;\n"
-"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
-"                                stop:0 #003366, stop:1 #000F40); /* Gradient xanh đậm */\n"
-"}\n"
-"")
-        self.label_2.setObjectName("label_2")
-        self.lineEdit_register_username = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.lineEdit_register_username.setGeometry(QtCore.QRect(340, 250, 211, 41))
-        self.lineEdit_register_username.setStyleSheet("/* QLineEdit - Ô nhập liệu */\n"
-"QLineEdit {\n"
-"    font-size: 18px;  /* Kích thước chữ */\n"
-"    font-weight: bold;\n"
-"    color: white;  /* Màu chữ trắng */\n"
-"    padding: 8px;\n"
-"    border: 3px solid #FFD700;  /* Viền vàng kim */\n"
-"    border-radius: 10px;  /* Bo góc mềm mại */\n"
-"    background: rgba(0, 0, 50, 0.8);  /* Màu xanh đậm trong suốt */\n"
-"    text-align: center;  /* Căn giữa chữ */\n"
-"    selection-background-color: #FFD700;  /* Màu nền khi chọn text */\n"
-"}\n"
-"\n"
-"/* Khi nhập vào ô, viền sáng lên */\n"
-"QLineEdit:focus {\n"
-"    border: 3px solid #00CFFF;  /* Viền phát sáng màu xanh neon */\n"
-"    background: rgba(0, 0, 80, 0.9);\n"
-"}\n"
-"")
-        self.lineEdit_register_username.setObjectName("lineEdit_register_username")
-        self.label_4 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(300, 140, 281, 71))
+        self.gridLayout_6.addWidget(self.pushButton_register, 6, 1, 1, 1)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_6.addItem(spacerItem2, 6, 2, 1, 1)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_6.addItem(spacerItem3, 0, 1, 1, 1)
+        self.widget_2 = QtWidgets.QWidget(parent=self.widget_6)
+        self.widget_2.setObjectName("widget_2")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.widget_2)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.label_4 = QtWidgets.QLabel(parent=self.widget_2)
         self.label_4.setStyleSheet("/* QLabel - Tiêu đề chính */\n"
 "QLabel {\n"
 "    font-size: 32px;  /* Tăng kích thước chữ */\n"
@@ -159,68 +254,21 @@ class Ui_Register(object):
 "}\n"
 "")
         self.label_4.setObjectName("label_4")
-        self.label_5 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(110, 240, 201, 51))
-        self.label_5.setStyleSheet("/* QLabel - Tiêu đề chính */\n"
-"QLabel {\n"
-"    font-size: 32px;  /* Tăng kích thước chữ */\n"
-"    font-weight: bold;\n"
-"    color: #FFD700;  /* Màu vàng kim */\n"
-"    text-align: center;  /* Căn giữa chữ */\n"
-"    qproperty-alignment: \'AlignCenter\';  /* Đảm bảo căn giữa trong Qt */\n"
-"    background: transparent;\n"
-"    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);  /* Hiệu ứng đổ bóng nổi bật */\n"
-"    border: 3px solid #FFD700;  /* Viền vàng giống khung câu hỏi trong game */\n"
-"    border-radius: 15px;  /* Bo góc mềm mại */\n"
-"    padding: 10px;\n"
-"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
-"                                stop:0 #003366, stop:1 #000F40); /* Gradient xanh đậm */\n"
-"}\n"
-"")
-        self.label_5.setObjectName("label_5")
-        self.pushButton_back = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton_back.setGeometry(QtCore.QRect(60, 50, 166, 51))
-        self.pushButton_back.setStyleSheet("QPushButton {\n"
-"    font-size: 18px;\n"
-"    font-weight: bold;\n"
-"    color: #FFD700; /* Màu vàng */\n"
-"    background-color: #003366; /* Xanh đậm */\n"
-"    border: 3px solid #FFD700; /* Viền vàng */\n"
-"    border-radius: 25px; /* Bo tròn */\n"
-"    padding: 10px 20px;\n"
-"    min-width: 120px;\n"
-"    text-transform: uppercase;\n"
-"    letter-spacing: 1px;\n"
-"    outline: none;\n"
-"    transition: all 0.3s ease-in-out;\n"
-"}\n"
-"\n"
-"/* Hiệu ứng hover - Nút sáng lên */\n"
-"QPushButton:hover {\n"
-"    background-color: #0044aa; /* Xanh sáng hơn */\n"
-"    border: 3px solid #FFEE58; /* Viền vàng sáng */\n"
-"    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8);\n"
-"}\n"
-"\n"
-"/* Hiệu ứng khi nhấn */\n"
-"QPushButton:pressed {\n"
-"    background-color: #002244; /* Xanh tối */\n"
-"    border: 3px solid #FFCC00; /* Viền vàng đậm */\n"
-"    box-shadow: 0px 0px 5px rgba(255, 215, 0, 0.5);\n"
-"    transform: scale(0.95);\n"
-"}\n"
-"\n"
-"/* Nút bị vô hiệu hóa */\n"
-"QPushButton:disabled {\n"
-"    background-color: #555555; /* Xám */\n"
-"    border: 3px solid #777777;\n"
-"    color: #999999;\n"
-"}\n"
-"")
-        self.pushButton_back.setObjectName("pushButton_back")
+        self.gridLayout_2.addWidget(self.label_4, 1, 1, 1, 1)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_2.addItem(spacerItem4, 0, 1, 1, 1)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_2.addItem(spacerItem5, 1, 0, 1, 1)
+        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_2.addItem(spacerItem6, 1, 2, 1, 1)
+        self.gridLayout_6.addWidget(self.widget_2, 1, 0, 1, 3)
+        spacerItem7 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.gridLayout_6.addItem(spacerItem7, 5, 0, 1, 1)
+        self.gridLayout_5.addWidget(self.widget_6, 0, 0, 1, 1)
+        self.gridLayout_7.addWidget(self.widget_5, 2, 0, 1, 2)
         Register.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=Register)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 817, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 802, 21))
         self.menubar.setObjectName("menubar")
         Register.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=Register)
@@ -233,8 +281,7 @@ class Ui_Register(object):
     def retranslateUi(self, Register):
         _translate = QtCore.QCoreApplication.translate
         Register.setWindowTitle(_translate("Register", "Register"))
-        self.pushButton_register.setText(_translate("Register", "Register"))
-        self.label_2.setText(_translate("Register", "Password"))
-        self.label_4.setText(_translate("Register", "Register Game"))
         self.label_5.setText(_translate("Register", "User Name"))
-        self.pushButton_back.setText(_translate("Register", "BACK"))
+        self.label_2.setText(_translate("Register", "Password"))
+        self.pushButton_register.setText(_translate("Register", "Register"))
+        self.label_4.setText(_translate("Register", "Register Game"))
