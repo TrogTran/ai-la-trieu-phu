@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1173</width>
+    <height>724</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="push_button_lich_su_choi">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>400</y>
+      <width>211</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-radius: 15px; /* Bo tròn góc */
+    background-color: #0074cc; /* Màu xanh đậm hơn */
+    color: white; /* Màu chữ trắng rõ ràng */
+    padding: 10px 20px; /* Kích thước lớn hơn để dễ bấm */
+    border: 3px solid #005fa3; /* Viền đậm hơn */
+    font-weight: bold; /* Chữ đậm */
+    font-size: 16px; /* Kích thước chữ lớn hơn */
+    text-transform: uppercase; /* Chữ in hoa */
+    letter-spacing: 1px; /* Khoảng cách chữ */
+    transition: all 0.2s ease-in-out; /* Hiệu ứng mượt */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); /* Tạo bóng nhẹ */
+}
+
+QPushButton:hover {
+    background-color: #005fa3; /* Đổi màu khi di chuột */
+    border-color: #004b82;
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); /* Bóng đậm hơn */
+}
+
+QPushButton:pressed {
+    background-color: #004b82; /* Màu tối hơn khi click */
+    border-color: #003a66;
+    transform: scale(0.95); /* Thu nhỏ nhẹ khi nhấn */
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5); /* Hiệu ứng nhấn xuống */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>LỊCH SỬ CHƠI</string>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="push_button_cai_dat">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>50</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-radius: 15px; /* Bo tròn góc */
+    background-color: #0074cc; /* Màu xanh đậm hơn */
+    color: white; /* Màu chữ trắng rõ ràng */
+    padding: 10px 20px; /* Kích thước lớn hơn để dễ bấm */
+    border: 3px solid #005fa3; /* Viền đậm hơn */
+    font-weight: bold; /* Chữ đậm */
+    font-size: 16px; /* Kích thước chữ lớn hơn */
+    text-transform: uppercase; /* Chữ in hoa */
+    letter-spacing: 1px; /* Khoảng cách chữ */
+    transition: all 0.2s ease-in-out; /* Hiệu ứng mượt */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); /* Tạo bóng nhẹ */
+}
+
+QPushButton:hover {
+    background-color: #005fa3; /* Đổi màu khi di chuột */
+    border-color: #004b82;
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); /* Bóng đậm hơn */
+}
+
+QPushButton:pressed {
+    background-color: #004b82; /* Màu tối hơn khi click */
+    border-color: #003a66;
+    transform: scale(0.95); /* Thu nhỏ nhẹ khi nhấn */
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5); /* Hiệu ứng nhấn xuống */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>CÀI ĐẶT</string>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="push_button_bat_dau">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>190</y>
+      <width>211</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-radius: 15px; /* Bo tròn góc */
+    background-color: #0074cc; /* Màu xanh đậm hơn */
+    color: white; /* Màu chữ trắng rõ ràng */
+    padding: 10px 20px; /* Kích thước lớn hơn để dễ bấm */
+    border: 3px solid #005fa3; /* Viền đậm hơn */
+    font-weight: bold; /* Chữ đậm */
+    font-size: 16px; /* Kích thước chữ lớn hơn */
+    text-transform: uppercase; /* Chữ in hoa */
+    letter-spacing: 1px; /* Khoảng cách chữ */
+    transition: all 0.2s ease-in-out; /* Hiệu ứng mượt */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); /* Tạo bóng nhẹ */
+}
+
+QPushButton:hover {
+    background-color: #005fa3; /* Đổi màu khi di chuột */
+    border-color: #004b82;
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); /* Bóng đậm hơn */
+}
+
+QPushButton:pressed {
+    background-color: #004b82; /* Màu tối hơn khi click */
+    border-color: #003a66;
+    transform: scale(0.95); /* Thu nhỏ nhẹ khi nhấn */
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5); /* Hiệu ứng nhấn xuống */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>BẮT ĐẦU 💲💲</string>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="push_button_thoat">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>60</y>
+      <width>181</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#push_button_thoat {
+    background-color: #e74c3c; /* Màu đỏ cảnh báo */
+    color: #2ecc71; /* Xanh lá cây tươi */
+    border-radius: 15px;
+    padding: 10px 45px;
+    border: 3px solid #c0392b; /* Viền đậm */
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px; /* Giãn chữ nhẹ */
+    background-image: url(&quot;ui/assets/image/exit_icon.png&quot;); 
+    background-repeat: no-repeat;
+    background-position: left 12px center;
+    background-size: 28px 28px;
+    box-shadow: 0px 4px 10px rgba(231, 76, 60, 0.5); /* Đổ bóng màu đỏ */
+    transition: all 0.3s ease-in-out;
+}
+
+QPushButton#push_button_thoat:hover {
+    background-color: #c0392b;  /* Đỏ đậm hơn khi hover */
+    border: 3px solid #a93226;  
+    box-shadow: 0px 6px 15px rgba(192, 57, 43, 0.7); /* Tăng độ bóng */
+    transform: scale(1.1); /* Phóng to nhẹ */
+}
+
+QPushButton#push_button_thoat:pressed {
+    background-color: #922b21; /* Đỏ tối khi bấm */
+    border: 3px solid #78281f;
+    color: #27ae60; /* Xanh lá đậm hơn khi nhấn */
+    box-shadow: 0px 2px 5px rgba(146, 43, 33, 0.8); /* Giảm bóng */
+    transform: scale(0.9); /* Thu nhỏ nhẹ khi click */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>THOÁT ⏻</string>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <zorder>push_button_cai_dat</zorder>
+   <zorder>push_button_bat_dau</zorder>
+   <zorder>push_button_lich_su_choi</zorder>
+   <zorder>push_button_thoat</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1173</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
