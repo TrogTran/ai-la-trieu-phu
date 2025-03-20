@@ -949,15 +949,15 @@ class QuestionManagerWindow(QtWidgets.QWidget):
 
         self.setLayout(layout)
 
-    def add_question(self):
-        question = self.question_input.text().strip()
-        answers = [input.text().strip() for input in self.answer_inputs]
-        correct = self.correct_selector.currentIndex()
-        language = self.lang_selector.currentText()
-
-        if not question or not all(answers):
-            QMessageBox.warning(self, "Lỗi", "Vui lòng nhập đầy đủ thông tin!")
-            return
+    # def add_question(self):
+    #     question = self.question_input.text().strip()
+    #     answers = [input.text().strip() for input in self.answer_inputs]
+    #     correct = self.correct_selector.currentIndex()
+    #     language = self.lang_selector.currentText()
+    #
+    #     if not question or not all(answers):
+    #         QMessageBox.warning(self, "Lỗi", "Vui lòng nhập đầy đủ thông tin!")
+    #         return
 
         self.questions_collection.insert_one({
             "question": question,
