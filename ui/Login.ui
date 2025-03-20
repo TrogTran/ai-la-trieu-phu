@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>716</width>
-    <height>642</height>
+    <width>839</width>
+    <height>823</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,17 +21,68 @@ background-size: cover;
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="lineEdit_username">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>180</y>
-      <width>211</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">/* QLineEdit - Ô nhập liệu */
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="4" column="0">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="0">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="0">
+        <widget class="QWidget" name="widget_6" native="true">
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="styleSheet">
+             <string notr="true">/* QLabel - Tiêu đề chính */
+QLabel {
+    font-size: 25px;  /* Tăng kích thước chữ */
+    font-weight: bold;
+    color: #FFD700;  /* Màu vàng kim */
+    text-align: center;  /* Căn giữa chữ */
+    qproperty-alignment: 'AlignCenter';  /* Đảm bảo căn giữa trong Qt */
+    background: transparent;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);  /* Hiệu ứng đổ bóng nổi bật */
+    border: 3px solid #FFD700;  /* Viền vàng giống khung câu hỏi trong game */
+    border-radius: 15px;  /* Bo góc mềm mại */
+    padding: 10px;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 #003366, stop:1 #000F40); /* Gradient xanh đậm */
+}
+</string>
+            </property>
+            <property name="text">
+             <string>Password</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="lineEdit_password">
+            <property name="styleSheet">
+             <string notr="true">/* QLineEdit - Ô nhập liệu */
 QLineEdit {
     font-size: 18px;  /* Kích thước chữ */
     font-weight: bold;
@@ -50,19 +101,78 @@ QLineEdit:focus {
     background: rgba(0, 0, 80, 0.9);
 }
 </string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_password">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>290</y>
-      <width>211</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">/* QLineEdit - Ô nhập liệu */
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QWidget" name="widget_4" native="true">
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="styleSheet">
+             <string notr="true">/* QLabel - Tiêu đề chính */
+QLabel {
+    font-size: 32px;  /* Tăng kích thước chữ */
+    font-weight: bold;
+    color: #FFD700;  /* Màu vàng kim */
+    text-align: center;  /* Căn giữa chữ */
+    qproperty-alignment: 'AlignCenter';  /* Đảm bảo căn giữa trong Qt */
+    background: transparent;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);  /* Hiệu ứng đổ bóng nổi bật */
+    border: 3px solid #FFD700;  /* Viền vàng giống khung câu hỏi trong game */
+    border-radius: 15px;  /* Bo góc mềm mại */
+    padding: 10px;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 #003366, stop:1 #000F40); /* Gradient xanh đậm */
+}
+</string>
+            </property>
+            <property name="text">
+             <string>Login Game</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QWidget" name="widget_3" native="true">
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="styleSheet">
+             <string notr="true">/* QLabel - Tiêu đề chính */
+QLabel {
+    font-size: 25px;  /* Tăng kích thước chữ */
+    font-weight: bold;
+    color: #FFD700;  /* Màu vàng kim */
+    text-align: center;  /* Căn giữa chữ */
+    qproperty-alignment: 'AlignCenter';  /* Đảm bảo căn giữa trong Qt */
+    background: transparent;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);  /* Hiệu ứng đổ bóng nổi bật */
+    border: 3px solid #FFD700;  /* Viền vàng giống khung câu hỏi trong game */
+    border-radius: 15px;  /* Bo góc mềm mại */
+    padding: 10px;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 #003366, stop:1 #000F40); /* Gradient xanh đậm */
+}
+</string>
+            </property>
+            <property name="text">
+             <string>User Name</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="lineEdit_username">
+            <property name="styleSheet">
+             <string notr="true">/* QLineEdit - Ô nhập liệu */
 QLineEdit {
     font-size: 18px;  /* Kích thước chữ */
     font-weight: bold;
@@ -81,22 +191,35 @@ QLineEdit:focus {
     background: rgba(0, 0, 80, 0.9);
 }
 </string>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::Password</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_login">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>360</y>
-      <width>131</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">/* QLabel - Tiêu đề User Name, Password */
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QWidget" name="widget_5" native="true">
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="1">
+           <widget class="QWidget" name="widget_2" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QPushButton" name="pushButton_login">
+               <property name="styleSheet">
+                <string notr="true">/* QLabel - Tiêu đề User Name, Password */
 QLabel {
     font-size: 18px;
     font-weight: bold;
@@ -148,183 +271,16 @@ QPushButton:pressed {
     border-color: #FFD700;
 }
 </string>
-    </property>
-    <property name="text">
-     <string>Login</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_register">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>430</y>
-      <width>131</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">/* QLabel - Tiêu đề User Name, Password */
-QLabel {
-    font-size: 18px;
-    font-weight: bold;
-    color: #FFD700; /* Vàng nổi bật */
-    text-shadow: 2px 2px 4px #000;
-    background: transparent;
-}
-
-/* QLineEdit - Ô nhập username, password */
-QLineEdit {
-    font-size: 16px;
-    padding: 8px;
-    border: 2px solid #0077CC; /* Viền xanh neon */
-    border-radius: 8px;
-    background: rgba(0, 0, 50, 0.8); /* Màu xanh đậm trong suốt */
-    color: white;
-}
-
-/* Khi nhập vào ô, viền sẽ sáng lên */
-QLineEdit:focus {
-    border: 2px solid #00CFFF; 
-    background: rgba(0, 0, 80, 0.9);
-}
-
-/* QPushButton - Nút Đăng nhập và Đăng ký */
-QPushButton {
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
-    border: 2px solid #FFD700; /* Viền vàng nổi bật */
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
-                                stop:0 #0057D9, stop:1 #002F7A);
-    transition: all 0.3s ease-in-out;
-}
-
-/* Hiệu ứng hover - Sáng rực hơn khi rê chuột */
-QPushButton:hover {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
-                                stop:0 #007AFF, stop:1 #0044AA);
-    border-color: #FFFFFF;
-}
-
-/* Hiệu ứng khi nhấn nút - Làm tối lại để giống hiệu ứng bấm trong game */
-QPushButton:pressed {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
-                                stop:0 #003C82, stop:1 #001A40);
-    border-color: #FFD700;
-}
-
-</string>
-    </property>
-    <property name="text">
-     <string>Register</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>170</y>
-      <width>201</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">/* QLabel - Tiêu đề chính */
-QLabel {
-    font-size: 32px;  /* Tăng kích thước chữ */
-    font-weight: bold;
-    color: #FFD700;  /* Màu vàng kim */
-    text-align: center;  /* Căn giữa chữ */
-    qproperty-alignment: 'AlignCenter';  /* Đảm bảo căn giữa trong Qt */
-    background: transparent;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);  /* Hiệu ứng đổ bóng nổi bật */
-    border: 3px solid #FFD700;  /* Viền vàng giống khung câu hỏi trong game */
-    border-radius: 15px;  /* Bo góc mềm mại */
-    padding: 10px;
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
-                                stop:0 #003366, stop:1 #000F40); /* Gradient xanh đậm */
-}
-</string>
-    </property>
-    <property name="text">
-     <string>User Name</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>280</y>
-      <width>201</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">/* QLabel - Tiêu đề chính */
-QLabel {
-    font-size: 32px;  /* Tăng kích thước chữ */
-    font-weight: bold;
-    color: #FFD700;  /* Màu vàng kim */
-    text-align: center;  /* Căn giữa chữ */
-    qproperty-alignment: 'AlignCenter';  /* Đảm bảo căn giữa trong Qt */
-    background: transparent;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);  /* Hiệu ứng đổ bóng nổi bật */
-    border: 3px solid #FFD700;  /* Viền vàng giống khung câu hỏi trong game */
-    border-radius: 15px;  /* Bo góc mềm mại */
-    padding: 10px;
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
-                                stop:0 #003366, stop:1 #000F40); /* Gradient xanh đậm */
-}
-</string>
-    </property>
-    <property name="text">
-     <string>Password</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>70</y>
-      <width>271</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">/* QLabel - Tiêu đề chính */
-QLabel {
-    font-size: 32px;  /* Tăng kích thước chữ */
-    font-weight: bold;
-    color: #FFD700;  /* Màu vàng kim */
-    text-align: center;  /* Căn giữa chữ */
-    qproperty-alignment: 'AlignCenter';  /* Đảm bảo căn giữa trong Qt */
-    background: transparent;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);  /* Hiệu ứng đổ bóng nổi bật */
-    border: 3px solid #FFD700;  /* Viền vàng giống khung câu hỏi trong game */
-    border-radius: 15px;  /* Bo góc mềm mại */
-    padding: 10px;
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
-                                stop:0 #003366, stop:1 #000F40); /* Gradient xanh đậm */
-}
-</string>
-    </property>
-    <property name="text">
-     <string>Login Game</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_forgot_password">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>500</y>
-      <width>171</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">/* QLabel - Tiêu đề User Name, Password */
+               </property>
+               <property name="text">
+                <string>Login</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_register">
+               <property name="styleSheet">
+                <string notr="true">/* QLabel - Tiêu đề User Name, Password */
 QLabel {
     font-size: 18px;
     font-weight: bold;
@@ -377,18 +333,117 @@ QPushButton:pressed {
 }
 
 </string>
-    </property>
-    <property name="text">
-     <string>Forgot password</string>
-    </property>
-   </widget>
+               </property>
+               <property name="text">
+                <string>Register</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_forgot_password">
+               <property name="styleSheet">
+                <string notr="true">/* QLabel - Tiêu đề User Name, Password */
+QLabel {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFD700; /* Vàng nổi bật */
+    text-shadow: 2px 2px 4px #000;
+    background: transparent;
+}
+
+/* QLineEdit - Ô nhập username, password */
+QLineEdit {
+    font-size: 16px;
+    padding: 8px;
+    border: 2px solid #0077CC; /* Viền xanh neon */
+    border-radius: 8px;
+    background: rgba(0, 0, 50, 0.8); /* Màu xanh đậm trong suốt */
+    color: white;
+}
+
+/* Khi nhập vào ô, viền sẽ sáng lên */
+QLineEdit:focus {
+    border: 2px solid #00CFFF; 
+    background: rgba(0, 0, 80, 0.9);
+}
+
+/* QPushButton - Nút Đăng nhập và Đăng ký */
+QPushButton {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    border: 2px solid #FFD700; /* Viền vàng nổi bật */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 #0057D9, stop:1 #002F7A);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hiệu ứng hover - Sáng rực hơn khi rê chuột */
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 #007AFF, stop:1 #0044AA);
+    border-color: #FFFFFF;
+}
+
+/* Hiệu ứng khi nhấn nút - Làm tối lại để giống hiệu ứng bấm trong game */
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 #003C82, stop:1 #001A40);
+    border-color: #FFD700;
+}
+
+</string>
+               </property>
+               <property name="text">
+                <string>Forgot password</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>716</width>
+     <width>839</width>
      <height>21</height>
     </rect>
    </property>

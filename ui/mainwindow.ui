@@ -6,212 +6,38 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1173</width>
-    <height>724</height>
+    <width>878</width>
+    <height>603</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="push_button_lich_su_choi">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>400</y>
-      <width>211</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>-1</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    border-radius: 15px; /* Bo tròn góc */
-    background-color: #0074cc; /* Màu xanh đậm hơn */
-    color: white; /* Màu chữ trắng rõ ràng */
-    padding: 10px 20px; /* Kích thước lớn hơn để dễ bấm */
-    border: 3px solid #005fa3; /* Viền đậm hơn */
-    font-weight: bold; /* Chữ đậm */
-    font-size: 16px; /* Kích thước chữ lớn hơn */
-    text-transform: uppercase; /* Chữ in hoa */
-    letter-spacing: 1px; /* Khoảng cách chữ */
-    transition: all 0.2s ease-in-out; /* Hiệu ứng mượt */
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); /* Tạo bóng nhẹ */
-}
-
-QPushButton:hover {
-    background-color: #005fa3; /* Đổi màu khi di chuột */
-    border-color: #004b82;
-    transform: scale(1.05); /* Phóng to nhẹ khi hover */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); /* Bóng đậm hơn */
-}
-
-QPushButton:pressed {
-    background-color: #004b82; /* Màu tối hơn khi click */
-    border-color: #003a66;
-    transform: scale(0.95); /* Thu nhỏ nhẹ khi nhấn */
-    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5); /* Hiệu ứng nhấn xuống */
-}
-</string>
-    </property>
-    <property name="text">
-     <string>LỊCH SỬ CHƠI</string>
-    </property>
-    <property name="autoRepeat">
-     <bool>false</bool>
-    </property>
-    <property name="autoExclusive">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="push_button_cai_dat">
-    <property name="geometry">
-     <rect>
-      <x>980</x>
-      <y>50</y>
-      <width>121</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>-1</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    border-radius: 15px; /* Bo tròn góc */
-    background-color: #0074cc; /* Màu xanh đậm hơn */
-    color: white; /* Màu chữ trắng rõ ràng */
-    padding: 10px 20px; /* Kích thước lớn hơn để dễ bấm */
-    border: 3px solid #005fa3; /* Viền đậm hơn */
-    font-weight: bold; /* Chữ đậm */
-    font-size: 16px; /* Kích thước chữ lớn hơn */
-    text-transform: uppercase; /* Chữ in hoa */
-    letter-spacing: 1px; /* Khoảng cách chữ */
-    transition: all 0.2s ease-in-out; /* Hiệu ứng mượt */
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); /* Tạo bóng nhẹ */
-}
-
-QPushButton:hover {
-    background-color: #005fa3; /* Đổi màu khi di chuột */
-    border-color: #004b82;
-    transform: scale(1.05); /* Phóng to nhẹ khi hover */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); /* Bóng đậm hơn */
-}
-
-QPushButton:pressed {
-    background-color: #004b82; /* Màu tối hơn khi click */
-    border-color: #003a66;
-    transform: scale(0.95); /* Thu nhỏ nhẹ khi nhấn */
-    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5); /* Hiệu ứng nhấn xuống */
-}
-</string>
-    </property>
-    <property name="text">
-     <string>CÀI ĐẶT</string>
-    </property>
-    <property name="autoRepeat">
-     <bool>false</bool>
-    </property>
-    <property name="autoExclusive">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="push_button_bat_dau">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>190</y>
-      <width>211</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>-1</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    border-radius: 15px; /* Bo tròn góc */
-    background-color: #0074cc; /* Màu xanh đậm hơn */
-    color: white; /* Màu chữ trắng rõ ràng */
-    padding: 10px 20px; /* Kích thước lớn hơn để dễ bấm */
-    border: 3px solid #005fa3; /* Viền đậm hơn */
-    font-weight: bold; /* Chữ đậm */
-    font-size: 16px; /* Kích thước chữ lớn hơn */
-    text-transform: uppercase; /* Chữ in hoa */
-    letter-spacing: 1px; /* Khoảng cách chữ */
-    transition: all 0.2s ease-in-out; /* Hiệu ứng mượt */
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); /* Tạo bóng nhẹ */
-}
-
-QPushButton:hover {
-    background-color: #005fa3; /* Đổi màu khi di chuột */
-    border-color: #004b82;
-    transform: scale(1.05); /* Phóng to nhẹ khi hover */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); /* Bóng đậm hơn */
-}
-
-QPushButton:pressed {
-    background-color: #004b82; /* Màu tối hơn khi click */
-    border-color: #003a66;
-    transform: scale(0.95); /* Thu nhỏ nhẹ khi nhấn */
-    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5); /* Hiệu ứng nhấn xuống */
-}
-</string>
-    </property>
-    <property name="text">
-     <string>BẮT ĐẦU 💲💲</string>
-    </property>
-    <property name="autoRepeat">
-     <bool>false</bool>
-    </property>
-    <property name="autoExclusive">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="push_button_thoat">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>60</y>
-      <width>181</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>-1</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton#push_button_thoat {
+   <layout class="QGridLayout" name="gridLayout_7">
+    <item row="0" column="0">
+     <widget class="QWidget" name="widget_6" native="true">
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0">
+        <widget class="QWidget" name="widget" native="true">
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <widget class="QWidget" name="widget_2" native="true">
+            <layout class="QGridLayout" name="gridLayout_4">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="push_button_thoat">
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton#push_button_thoat {
     background-color: #e74c3c; /* Màu đỏ cảnh báo */
     color: #2ecc71; /* Xanh lá cây tươi */
     border-radius: 15px;
@@ -243,28 +69,277 @@ QPushButton#push_button_thoat:pressed {
     transform: scale(0.9); /* Thu nhỏ nhẹ khi click */
 }
 </string>
-    </property>
-    <property name="text">
-     <string>THOÁT ⏻</string>
-    </property>
-    <property name="autoRepeat">
-     <bool>false</bool>
-    </property>
-    <property name="autoExclusive">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <zorder>push_button_cai_dat</zorder>
-   <zorder>push_button_bat_dau</zorder>
-   <zorder>push_button_lich_su_choi</zorder>
-   <zorder>push_button_thoat</zorder>
+               </property>
+               <property name="text">
+                <string>THOÁT ⏻</string>
+               </property>
+               <property name="autoRepeat">
+                <bool>false</bool>
+               </property>
+               <property name="autoExclusive">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QWidget" name="widget_3" native="true">
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="push_button_bat_dau">
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+    border-radius: 15px; /* Bo tròn góc */
+    background-color: #0074cc; /* Màu xanh đậm hơn */
+    color: white; /* Màu chữ trắng rõ ràng */
+    padding: 10px 20px; /* Kích thước lớn hơn để dễ bấm */
+    border: 3px solid #005fa3; /* Viền đậm hơn */
+    font-weight: bold; /* Chữ đậm */
+    font-size: 16px; /* Kích thước chữ lớn hơn */
+    text-transform: uppercase; /* Chữ in hoa */
+    letter-spacing: 1px; /* Khoảng cách chữ */
+    transition: all 0.2s ease-in-out; /* Hiệu ứng mượt */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); /* Tạo bóng nhẹ */
+}
+
+QPushButton:hover {
+    background-color: #005fa3; /* Đổi màu khi di chuột */
+    border-color: #004b82;
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); /* Bóng đậm hơn */
+}
+
+QPushButton:pressed {
+    background-color: #004b82; /* Màu tối hơn khi click */
+    border-color: #003a66;
+    transform: scale(0.95); /* Thu nhỏ nhẹ khi nhấn */
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5); /* Hiệu ứng nhấn xuống */
+}
+</string>
+               </property>
+               <property name="text">
+                <string>BẮT ĐẦU 💲💲</string>
+               </property>
+               <property name="autoRepeat">
+                <bool>false</bool>
+               </property>
+               <property name="autoExclusive">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QWidget" name="widget_4" native="true">
+            <layout class="QGridLayout" name="gridLayout_3">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="push_button_cai_dat">
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+    border-radius: 15px; /* Bo tròn góc */
+    background-color: #0074cc; /* Màu xanh đậm hơn */
+    color: white; /* Màu chữ trắng rõ ràng */
+    padding: 10px 20px; /* Kích thước lớn hơn để dễ bấm */
+    border: 3px solid #005fa3; /* Viền đậm hơn */
+    font-weight: bold; /* Chữ đậm */
+    font-size: 16px; /* Kích thước chữ lớn hơn */
+    text-transform: uppercase; /* Chữ in hoa */
+    letter-spacing: 1px; /* Khoảng cách chữ */
+    transition: all 0.2s ease-in-out; /* Hiệu ứng mượt */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); /* Tạo bóng nhẹ */
+}
+
+QPushButton:hover {
+    background-color: #005fa3; /* Đổi màu khi di chuột */
+    border-color: #004b82;
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); /* Bóng đậm hơn */
+}
+
+QPushButton:pressed {
+    background-color: #004b82; /* Màu tối hơn khi click */
+    border-color: #003a66;
+    transform: scale(0.95); /* Thu nhỏ nhẹ khi nhấn */
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5); /* Hiệu ứng nhấn xuống */
+}
+</string>
+               </property>
+               <property name="text">
+                <string>CÀI ĐẶT</string>
+               </property>
+               <property name="autoRepeat">
+                <bool>false</bool>
+               </property>
+               <property name="autoExclusive">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QWidget" name="widget_5" native="true">
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="push_button_lich_su_choi">
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+    border-radius: 15px; /* Bo tròn góc */
+    background-color: #0074cc; /* Màu xanh đậm hơn */
+    color: white; /* Màu chữ trắng rõ ràng */
+    padding: 10px 20px; /* Kích thước lớn hơn để dễ bấm */
+    border: 3px solid #005fa3; /* Viền đậm hơn */
+    font-weight: bold; /* Chữ đậm */
+    font-size: 16px; /* Kích thước chữ lớn hơn */
+    text-transform: uppercase; /* Chữ in hoa */
+    letter-spacing: 1px; /* Khoảng cách chữ */
+    transition: all 0.2s ease-in-out; /* Hiệu ứng mượt */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); /* Tạo bóng nhẹ */
+}
+
+QPushButton:hover {
+    background-color: #005fa3; /* Đổi màu khi di chuột */
+    border-color: #004b82;
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); /* Bóng đậm hơn */
+}
+
+QPushButton:pressed {
+    background-color: #004b82; /* Màu tối hơn khi click */
+    border-color: #003a66;
+    transform: scale(0.95); /* Thu nhỏ nhẹ khi nhấn */
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5); /* Hiệu ứng nhấn xuống */
+}
+</string>
+               </property>
+               <property name="text">
+                <string>LỊCH SỬ CHƠI</string>
+               </property>
+               <property name="autoRepeat">
+                <bool>false</bool>
+               </property>
+               <property name="autoExclusive">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="2">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="0">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1173</width>
+     <width>878</width>
      <height>21</height>
     </rect>
    </property>

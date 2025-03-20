@@ -344,13 +344,19 @@ class GamePlayWindow(QMainWindow, Ui_GamePlay):
 
     def load_questions(self):
         try:
+            # Lấy tất cả câu hỏi từ MongoDB theo ngôn ngữ
             self.cau_hoi = list(self.questions_collection.find({"language": self.language}))
             print(f"Loaded {len(self.cau_hoi)} questions for language '{self.language}'")
+
             if not self.cau_hoi:
                 QMessageBox.critical(self, "Lỗi",
                                      f"Không có câu hỏi nào cho ngôn ngữ '{self.language}' trong cơ sở dữ liệu!")
                 self.close()
                 return False
+
+            # Xáo trộn danh sách câu hỏi
+            random.shuffle(self.cau_hoi)
+
             return True
         except Exception as e:
             QMessageBox.critical(self, "Lỗi", f"Lỗi khi tải câu hỏi: {str(e)}")
@@ -392,15 +398,123 @@ class GamePlayWindow(QMainWindow, Ui_GamePlay):
             self.dap_an_2_button.setText(question_data["answers"][1])
             self.dap_an_3_button.setText(question_data["answers"][2])
             self.dap_an_4_button.setText(question_data["answers"][3])
-            self.reward_label.setText(f"Tiền thưởng hiện tại: {self.reward:,} VND")  # Chỉ dùng reward_label
+            self.reward_label.setText(f"Tiền thưởng hiện tại: {self.reward:,} VND")
             self.dap_an_1_button.setVisible(True)
             self.dap_an_2_button.setVisible(True)
             self.dap_an_3_button.setVisible(True)
             self.dap_an_4_button.setVisible(True)
-            self.dap_an_1_button.setStyleSheet("")
-            self.dap_an_2_button.setStyleSheet("")
-            self.dap_an_3_button.setStyleSheet("")
-            self.dap_an_4_button.setStyleSheet("")
+            self.dap_an_1_button.setStyleSheet("""
+                QPushButton {
+                    border-radius: 15px; /* Điều chỉnh độ bo tròn */
+                    background-color: #3498db; /* Màu nền */
+                    color: white; /* Màu chữ */
+                    padding: 10px 20px; /* Khoảng cách nội dung */
+                    border: 2px solid #2980b9; /* Viền */
+                    font-size: 16px; /* Cỡ chữ */
+                    font-weight: bold; /* Chữ đậm */
+                    transition: background-color 0.3s, transform 0.1s, box-shadow 0.2s; /* Hiệu ứng mượt */
+                }
+
+                /* Hiệu ứng hover - Thêm bóng đổ để nút nổi lên */
+                QPushButton:hover {
+                    background-color: #2980b9; /* Màu xanh đậm hơn khi hover */
+                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Tạo bóng đổ */
+                    transform: scale(1.05); /* Phóng to nhẹ khi di chuột vào */
+                }
+
+                /* Hiệu ứng click */
+                QPushButton:pressed {
+                    background-color: #1f6690; /* Màu tối hơn khi nhấn */
+                    border: 2px solid #16527b; /* Viền tối hơn khi nhấn */
+                    transform: scale(0.92); /* Hiệu ứng co lại khi nhấn */
+                    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Bóng mờ nhẹ khi nhấn */
+                }
+            """)
+
+            self.dap_an_2_button.setStyleSheet("""
+                QPushButton {
+                    border-radius: 15px; /* Điều chỉnh độ bo tròn */
+                    background-color: #3498db; /* Màu nền */
+                    color: white; /* Màu chữ */
+                    padding: 10px 20px; /* Khoảng cách nội dung */
+                    border: 2px solid #2980b9; /* Viền */
+                    font-size: 16px; /* Cỡ chữ */
+                    font-weight: bold; /* Chữ đậm */
+                    transition: background-color 0.3s, transform 0.1s, box-shadow 0.2s; /* Hiệu ứng mượt */
+                }
+
+                /* Hiệu ứng hover - Thêm bóng đổ để nút nổi lên */
+                QPushButton:hover {
+                    background-color: #2980b9; /* Màu xanh đậm hơn khi hover */
+                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Tạo bóng đổ */
+                    transform: scale(1.05); /* Phóng to nhẹ khi di chuột vào */
+                }
+
+                /* Hiệu ứng click */
+                QPushButton:pressed {
+                    background-color: #1f6690; /* Màu tối hơn khi nhấn */
+                    border: 2px solid #16527b; /* Viền tối hơn khi nhấn */
+                    transform: scale(0.92); /* Hiệu ứng co lại khi nhấn */
+                    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Bóng mờ nhẹ khi nhấn */
+                }
+            """)
+
+            self.dap_an_3_button.setStyleSheet("""
+                QPushButton {
+                    border-radius: 15px; /* Điều chỉnh độ bo tròn */
+                    background-color: #3498db; /* Màu nền */
+                    color: white; /* Màu chữ */
+                    padding: 10px 20px; /* Khoảng cách nội dung */
+                    border: 2px solid #2980b9; /* Viền */
+                    font-size: 16px; /* Cỡ chữ */
+                    font-weight: bold; /* Chữ đậm */
+                    transition: background-color 0.3s, transform 0.1s, box-shadow 0.2s; /* Hiệu ứng mượt */
+                }
+
+                /* Hiệu ứng hover - Thêm bóng đổ để nút nổi lên */
+                QPushButton:hover {
+                    background-color: #2980b9; /* Màu xanh đậm hơn khi hover */
+                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Tạo bóng đổ */
+                    transform: scale(1.05); /* Phóng to nhẹ khi di chuột vào */
+                }
+
+                /* Hiệu ứng click */
+                QPushButton:pressed {
+                    background-color: #1f6690; /* Màu tối hơn khi nhấn */
+                    border: 2px solid #16527b; /* Viền tối hơn khi nhấn */
+                    transform: scale(0.92); /* Hiệu ứng co lại khi nhấn */
+                    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Bóng mờ nhẹ khi nhấn */
+                }
+            """)
+
+            self.dap_an_4_button.setStyleSheet("""
+                QPushButton {
+                    border-radius: 15px; /* Điều chỉnh độ bo tròn */
+                    background-color: #3498db; /* Màu nền */
+                    color: white; /* Màu chữ */
+                    padding: 10px 20px; /* Khoảng cách nội dung */
+                    border: 2px solid #2980b9; /* Viền */
+                    font-size: 16px; /* Cỡ chữ */
+                    font-weight: bold; /* Chữ đậm */
+                    transition: background-color 0.3s, transform 0.1s, box-shadow 0.2s; /* Hiệu ứng mượt */
+                }
+
+                /* Hiệu ứng hover - Thêm bóng đổ để nút nổi lên */
+                QPushButton:hover {
+                    background-color: #2980b9; /* Màu xanh đậm hơn khi hover */
+                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Tạo bóng đổ */
+                    transform: scale(1.05); /* Phóng to nhẹ khi di chuột vào */
+                }
+
+                /* Hiệu ứng click */
+                QPushButton:pressed {
+                    background-color: #1f6690; /* Màu tối hơn khi nhấn */
+                    border: 2px solid #16527b; /* Viền tối hơn khi nhấn */
+                    transform: scale(0.92); /* Hiệu ứng co lại khi nhấn */
+                    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Bóng mờ nhẹ khi nhấn */
+                }
+            """)
+
             self.update_help_buttons()
             self.next_button.setVisible(False)
         else:
@@ -478,6 +592,7 @@ class GamePlayWindow(QMainWindow, Ui_GamePlay):
         self.used_50_50 = False
         self.used_goi_nguoi_than = False
         self.used_hoi_khan_gia = False
+        self.load_questions()  # Tải và xáo trộn lại câu hỏi
         self.save_progress()
         self.hien_cau_hoi()
 
@@ -744,7 +859,6 @@ class MW_Extend(QMainWindow, Ui_MainWindow):
     def showSettings(self):
         if not hasattr(self, 'settings_window') or self.settings_window is None:
             self.settings_window = SettingsWindow(self, self.db_manager)
-        self.hide()
         self.settings_window.show()
 
     def logout_user(self):
@@ -915,10 +1029,9 @@ class QuestionManagerWindow(QtWidgets.QWidget):
         self.main_window = main_window
         self.db_manager = db_manager
         self.questions_collection = self.db_manager.get_questions_collection()
-        # # self.client = MongoClient("mongodb://localhost:27017/")
-        # self.db = self.client["login_data"]
-        # self.questions_collection = self.db["questions_bank"]
-
+        self.client = MongoClient("mongodb://localhost:27017/")
+        self.db = self.client["login_data"]
+        self.questions_collection = self.db["questions_bank"]
         layout = QtWidgets.QVBoxLayout()
 
         # Nhập câu hỏi
@@ -969,6 +1082,3 @@ class QuestionManagerWindow(QtWidgets.QWidget):
         self.question_input.clear()
         for input in self.answer_inputs:
             input.clear()
-
-
-            vdxhgfdrgtysedxtrfghfvjhy
