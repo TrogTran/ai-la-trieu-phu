@@ -7,11 +7,10 @@ from .register import Ui_Register
 import ctypes
 from PyQt6 import QtWidgets, QtCore
 from PyQt6.QtMultimedia import QSoundEffect
-from PyQt6.QtCore import QUrl, QTimer
-from PyQt6.QtWidgets import QMessageBox, QApplication, QMainWindow, QPushButton
+from PyQt6.QtCore import QUrl, QTimer, Qt, QSize
+from PyQt6.QtWidgets import QMessageBox, QPushButton
 import os, pygame
-from PyQt6.QtGui import QPixmap
-from PyQt6.QtCore import Qt  # Đảm bảo đã import Qt
+from PyQt6.QtGui import QPixmap, QIcon
 from pymongo import MongoClient, errors
 import bcrypt
 import sys
@@ -20,6 +19,15 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QMes
 from PyQt6 import uic
 from PyQt6.QtMultimedia import QSoundEffect  # Đã có sẵn, dùng cho hiệu ứng âm thanh
 import json  # Để đọc file câu hỏi từ ngân hàng
+
+def resource_path(relative_path):
+    """Xử lý đường dẫn tài nguyên khi đóng gói"""
+    if hasattr(sys, '_MEIPASS'):
+        # Đường dẫn tạm khi chạy file .exe
+        return os.path.join(sys._MEIPASS, relative_path)
+    # Lấy thư mục chứa file mã nguồn (ui/), rồi đi ngược lên thư mục gốc (project_millionair/)
+    base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
 #Tạo lớp DatabaseManager để quản lý kết nối MongoDB
 class DatabaseManager:
     def __init__(self):
@@ -61,18 +69,10 @@ class RegisterWindow(QMainWindow, Ui_Register):
 
         # Kết nối nút Register với hàm xử lý đăng ký
         self.pushButton_register.clicked.connect(self.register_user)
+        back_icon_path = resource_path("assets/icons/back_icon.png")
+        self.pushButton_back.setIcon(QIcon(back_icon_path))
+        self.pushButton_back.setIconSize(QtCore.QSize(24, 24))  # Điều chỉnh kích thước icon
         self.pushButton_back.clicked.connect(self.Return_Login)
-
-                            # # Kết nối MongoDB với xử lý lỗi
-                            # try:
-                            #     self.client = MongoClient("mongodb://localhost:27017/", serverSelectionTimeoutMS=3000)
-                            #     self.db = self.client["login_data"]  # Đổi tên database
-                            #     self.users_collection = self.db["username_and_password"]  # Đổi tên collection
-                            #     # Kiểm tra kết nối MongoDB
-                            #     self.client.server_info()
-                            # except errors.ServerSelectionTimeoutError:
-                            #     QMessageBox.critical(self, "Lỗi", "Không thể kết nối đến MongoDB. Hãy kiểm tra lại!")
-                            #     self.close()  # Đóng cửa sổ nếu không có kết nối
 
     def register_user(self):
         """Xử lý đăng ký tài khoản"""
@@ -109,7 +109,7 @@ class RegisterWindow(QMainWindow, Ui_Register):
         self.login_window.lineEdit_username.setFocus()
     def set_background(self):
         """ Thiết lập hình nền bằng QLabel """
-        image_path = os.path.join(os.path.dirname(__file__), "assets/image/imgailatrieuphu1.jpg")
+        image_path = resource_path ("assets/image/imgailatrieuphu1.jpg")
 
         if not os.path.exists(image_path):
             print("Không tìm thấy ảnh nền!")
@@ -127,7 +127,7 @@ class RegisterWindow(QMainWindow, Ui_Register):
 
     def update_background(self):
         """ Cập nhật lại hình nền khi thay đổi kích thước """
-        image_path = os.path.join(os.path.dirname(__file__), "assets/image/imgailatrieuphu1.jpg")
+        image_path = resource_path( "assets/image/imgailatrieuphu1.jpg")
 
         if os.path.exists(image_path):
             # Lấy kích thước cửa sổ
@@ -219,7 +219,7 @@ class Login(QMainWindow, Ui_Login):
 
     def set_background(self):
         """ Thiết lập hình nền bằng QLabel """
-        image_path = os.path.join(os.path.dirname(__file__), "assets/image/imgailatrieuphu1.jpg")
+        image_path = resource_path("assets/image/imgailatrieuphu1.jpg")
 
         if not os.path.exists(image_path):
             print("Không tìm thấy ảnh nền!")
@@ -237,7 +237,7 @@ class Login(QMainWindow, Ui_Login):
 
     def update_background(self):
         """ Cập nhật lại hình nền khi thay đổi kích thước """
-        image_path = os.path.join(os.path.dirname(__file__), "assets/image/imgailatrieuphu1.jpg")
+        image_path = resource_path ("assets/image/imgailatrieuphu1.jpg")
 
         if os.path.exists(image_path):
             # Lấy kích thước cửa sổ
@@ -311,15 +311,19 @@ class GamePlayWindow(QMainWindow, Ui_GamePlay):
         self.background_label = QLabel(self)
         self.set_background()
         self.main_window = main_window
+        # Thêm icon cho nút Back
+        back_icon_path = resource_path("assets/icons/back_icon.png")
+        self.back_button.setIcon(QIcon(back_icon_path))
+        self.back_button.setIconSize(QtCore.QSize(24, 24))  # Điều chỉnh kích thước icon
         self.back_button.clicked.connect(self.Return_MainWindow)
         self.progress_collection = self.db_manager.get_progress_collection()
         self.questions_collection = self.db_manager.get_questions_collection()
 
         # Khởi tạo âm thanh
         self.correct_sound = QSoundEffect()
-        self.correct_sound.setSource(QUrl.fromLocalFile("assets/sound/correct.wav"))
+        self.correct_sound.setSource(QUrl.fromLocalFile(resource_path("assets/sound/correct.wav")))
         self.wrong_sound = QSoundEffect()
-        self.wrong_sound.setSource(QUrl.fromLocalFile("assets/sound/wrong.mp3"))
+        self.wrong_sound.setSource(QUrl.fromLocalFile(resource_path("assets/sound/wrong.mp3")))
 
         # Danh sách phần thưởng
         self.rewards = [10000, 20000, 50000, 100000, 200000, 500000, 1000000, 2000000, 5000000, 10000000,
@@ -707,7 +711,7 @@ class GamePlayWindow(QMainWindow, Ui_GamePlay):
 
     def set_background(self):
         """ Thiết lập hình nền bằng QLabel """
-        image_path = os.path.join(os.path.dirname(__file__), "assets/image/imgailatrieuphu1.jpg")
+        image_path = resource_path ("assets/image/imgailatrieuphu1.jpg")
 
         if not os.path.exists(image_path):
             print("Không tìm thấy ảnh nền!")
@@ -725,7 +729,7 @@ class GamePlayWindow(QMainWindow, Ui_GamePlay):
 
     def update_background(self):
         """ Cập nhật lại hình nền khi thay đổi kích thước """
-        image_path = os.path.join(os.path.dirname(__file__), "assets/image/imgailatrieuphu1.jpg")
+        image_path = resource_path( "assets/image/imgailatrieuphu1.jpg")
 
         if os.path.exists(image_path):
             # Lấy kích thước cửa sổ
@@ -773,7 +777,14 @@ class MW_Extend(QMainWindow, Ui_MainWindow):
         pygame.mixer.init()
 
         # Lấy đường dẫn tương đối tới file nhạc
-        music_path = os.path.join(os.path.dirname(__file__), "assets/music/back_ground_game.mp3")
+        music_path = resource_path("assets/music/back_ground_game.mp3")
+        try:
+            pygame.mixer.music.load(music_path)
+            pygame.mixer.music.set_volume(0.5)
+            pygame.mixer.music.play(-1)
+        except pygame.error as e:
+            print(f"Không thể tải nhạc nền: {str(e)}")
+            QMessageBox.warning(self, "Lỗi", f"Không tìm thấy file nhạc: {music_path}")
 
         pygame.mixer.music.load(music_path)
         pygame.mixer.music.set_volume(0.5)  # Đặt âm lượng (0.0 - 1.0)
@@ -798,7 +809,7 @@ class MW_Extend(QMainWindow, Ui_MainWindow):
             QMessageBox.critical(self, "Lỗi", f"Lỗi khi tải lịch sử: {str(e)}")
     def set_background(self):
         """ Thiết lập hình nền bằng QLabel """
-        image_path = os.path.join(os.path.dirname(__file__), "assets/image/imgailatrieuphu1.jpg")
+        image_path = resource_path( "assets/image/imgailatrieuphu1.jpg")
 
         if not os.path.exists(image_path):
             print("Không tìm thấy ảnh nền!")
@@ -816,7 +827,7 @@ class MW_Extend(QMainWindow, Ui_MainWindow):
 
     def update_background(self):
         """ Cập nhật lại hình nền khi thay đổi kích thước """
-        image_path = os.path.join(os.path.dirname(__file__), "assets/image/imgailatrieuphu1.jpg")
+        image_path = resource_path( "assets/image/imgailatrieuphu1.jpg")
 
         if os.path.exists(image_path):
             # Lấy kích thước cửa sổ
